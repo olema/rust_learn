@@ -20,4 +20,26 @@ fn main() {
 
     println!("The value of int8: i8 is: {int8}");
     println!("The value of uint8: u8 is: {uint8}");
+
+    // tuple
+    let tup: (i32, f64, u8) = (500, 6.4, 1);
+    let tup0 = (10, 20, 30, 40);
+    let (x1, y1, z1) = tup;
+    println!("The value of y1 is: {y1}");
+    // access to tuple elements with index
+    let ten = tup0.0;
+    let twenty = tup0.1;
+    println!("{ten} {twenty}");
+
+    // array
+    let months = ["January", "February", "March", "April", "May", "June", "July",
+              "August", "September", "October", "November", "December"];
+    let a: [i32; 5] = [1, 2, 3, 4, 5];
+    let a1 = [3; 5]; // same: let a1 = [3, 3, 3, 3, 3];
+    let apr = months[3];
+    let one = a[0];
+    let three = a1[4];
+    println!("{apr}, {one}, {three}");
+
+
 }
