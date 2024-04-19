@@ -11,7 +11,19 @@ fn main() {
     println!("{}", s2);
 
     let r1 = &mut s2;
-//    let r2 = &mut s2; // error, f you have a mutable reference to a value, you can have no other references to that value
+//    let r2 = &mut s2; // error, if you have a mutable reference to a value, you can have no other references to that value
+
+    let mut s3 = String::from("hello s3");
+
+    let r2 = &s3; // immutable borrow, no problem
+    let r3 = &s3; // immutable borrow, no problem
+//    let r4 = &mut s3; // BIG PROBLEM, cannot borrow as mutable
+
+    println!("r1 = {}, r2 = {}", r2, r3);
+//variables r1 and r2 will not be used after this point
+
+    let r4 = &mut s3; // no problem. 
+    println!("r4 = {}", r4);
 
 }
 
