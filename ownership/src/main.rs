@@ -20,6 +20,10 @@ fn main() {
 
     println!("The length of '{}' is {}", s2, len);
 
+// the slice type
+    let f_word = String::from("first word");
+    println!("first word: {}", first_word(&f_word));
+
 }
 
 fn takes_ownership(some_string: String) {
@@ -34,4 +38,16 @@ fn calc_length(s: String) -> (String, usize) {
     let length = s.len();
 
     (s, length)
+}
+
+fn first_word(s: &String) -> usize {
+    let bytes = s.as_bytes();
+
+    for (i, &item) in bytes.iter().enumerate() {
+        if item == b' ' {
+            return i;
+        }
+    }
+
+    s.len()
 }
